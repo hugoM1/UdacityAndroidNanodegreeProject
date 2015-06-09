@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeActivity"
+    android:background="@color/home_activity_background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/home_btn"
+        android:text="@string/home_title_text"
+        android:textColor="@color/home_title_color"
+        android:textSize="@dimen/home_title_size"
+        android:layout_marginBottom="25dp"/>
+
+    <Button
+        android:id="@+id/btn_spotify_streamer"
+        android:layout_width="@dimen/home_btn_w_size"
+        android:layout_height="@dimen/home_btn_h_size"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/home_btn"
+        android:background="@color/home_btn_background"
+        android:text="@string/streamer"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btn_scores_app"
+        android:layout_width="@dimen/home_btn_w_size"
+        android:layout_height="@dimen/home_btn_h_size"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/home_btn"
+        android:background="@color/home_btn_background"
+        android:text="@string/score"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btn_library_app"
+        android:layout_width="@dimen/home_btn_w_size"
+        android:layout_height="@dimen/home_btn_h_size"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/home_btn"
+        android:background="@color/home_btn_background"
+        android:text="@string/library"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btn_build_it_app"
+        android:layout_width="@dimen/home_btn_w_size"
+        android:layout_height="@dimen/home_btn_h_size"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/home_btn"
+        android:background="@color/home_btn_background"
+        android:text="@string/build_it"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btn_xyz_reader_app"
+        android:layout_width="@dimen/home_btn_w_size"
+        android:layout_height="@dimen/home_btn_h_size"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/home_btn"
+        android:background="@color/home_btn_background"
+        android:text="@string/xyz_app"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btn_capstone_app"
+        android:layout_width="@dimen/home_btn_w_size"
+        android:layout_height="@dimen/home_btn_h_size"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/home_btn"
+        android:background="@color/home_btn_capstone"
+        android:text="@string/capstone_app"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="home_btn_background">#F08C35</color>
+    <color name="home_btn_capstone">#CB1B45</color>
+    <color name="home_title_color">#243D6C</color>
+    <color name="home_activity_background">#D6E5EE</color>
+</resources>
