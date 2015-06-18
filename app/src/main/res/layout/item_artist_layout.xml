@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/image_view_artist"
+        android:layout_width="@dimen/artist_image_w_size"
+        android:layout_height="@dimen/artist_image_h_size"
+        android:src="@android:drawable/gallery_thumb"
+        android:layout_gravity="center"
+        android:contentDescription="@string/desc_author_image"
+        android:layout_margin="@dimen/image_view_author_margin"/>
+
+    <TextView
+        android:id="@+id/text_view_artist_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/artist_name_h_size"
+        android:layout_gravity="center"
+        android:gravity="center|start"
+        android:layout_margin="@dimen/text_view_author_name_margin"
+        android:textSize="@dimen/text_view_author_name_text_size"/>
+
+</LinearLayout>

@@ -6,4 +6,15 @@
     <dimen name="home_btn_h_size">50dp</dimen>
     <dimen name="home_btn">10dp</dimen>
     <dimen name="home_title_size">23sp</dimen>
+    <dimen name="search_h_size">60dp</dimen>
+    <dimen name="search_margin">20dp</dimen>
+    <dimen name="artist_image_w_size">80dp</dimen>
+    <dimen name="artist_image_h_size">80dp</dimen>
+    <dimen name="artist_name_h_size">80dp</dimen>
+    <dimen name="image_view_author_margin">6dp</dimen>
+    <dimen name="text_view_author_name_margin">15dp</dimen>
+    <dimen name="text_view_author_name_text_size">16sp</dimen>
+    <dimen name="text_view_track_album">6dp</dimen>
+    <dimen name="tracks_margin">16dp</dimen>
+    <dimen name="item_track_h_size">100dp</dimen>
 </resources>

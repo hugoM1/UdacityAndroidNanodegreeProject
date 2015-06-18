@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import udacity.hugo.myappportfolio.nav.NavigationHelper;
+
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button btnSpotify, btnScores, btnLibrary, btnBuidlIt, btnXYZReader, btnCapstone;
@@ -60,6 +62,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private void showToast(String msg){
         String textToShow = String.format("This button will launch my %s", msg);
         Toast.makeText(this, textToShow, Toast.LENGTH_SHORT).show();
+        NavigationHelper.openCurrentApp(this, msg);
     }
 
     @Override

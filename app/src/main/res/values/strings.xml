@@ -10,4 +10,9 @@
     <string name="build_it">BUILD IT BIGGER</string>
     <string name="xyz_app">XYZ READER</string>
     <string name="capstone_app">CAPSTONE: MY OWN APP</string>
+    <string name="title_activity_spotify_streamer">Spotify Streamer</string>
+    <string name="search_an_artist">search artist</string>
+    <string name="desc_author_image">This is the image to show the cover of an author</string>
+    <string name="title_activity_artist_tracks">Top 10 Tracks</string>
+    <string name="artist_not_found">Artist not found, try with other name.</string>
 </resources>

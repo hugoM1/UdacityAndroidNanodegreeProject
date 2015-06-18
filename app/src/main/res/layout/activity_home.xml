@@ -54,7 +54,7 @@
         android:layout_marginTop="@dimen/home_btn"
         android:background="@color/home_btn_background"
         android:text="@string/build_it"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"/>
 
     <Button
         android:id="@+id/btn_xyz_reader_app"
