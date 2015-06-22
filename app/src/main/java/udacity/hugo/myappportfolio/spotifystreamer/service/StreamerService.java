@@ -1,4 +1,4 @@
-package udacity.hugo.myappportfolio.spotifystreamer;
+package udacity.hugo.myappportfolio.spotifystreamer.service;
 
 import android.app.Service;
 import android.content.Intent;
@@ -61,7 +61,7 @@ public class StreamerService extends Service implements
     }
 
     public class StreamBinder extends Binder {
-        StreamerService getService() {
+       public StreamerService getService() {
             return StreamerService.this;
         }
     }
@@ -106,6 +106,15 @@ public class StreamerService extends Service implements
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
+    public void pauseMusic() {
+        if(player.isPlaying()){
+            player.pause();
+        }
+    }
+
+    public boolean isPlaying(){
+        return player.isPlaying();
     }
 }

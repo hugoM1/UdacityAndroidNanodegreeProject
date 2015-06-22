@@ -38,7 +38,7 @@
             android:name=".spotifystreamer.TrackPlayerActivity"
             android:label="@string/title_activity_track_player" >
         </activity>
-        <service android:name=".spotifystreamer.StreamerService"/>
+        <service android:name=".spotifystreamer.service.StreamerService"/>
     </application>
 
 </manifest>

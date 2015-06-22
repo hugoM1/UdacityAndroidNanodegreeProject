@@ -24,6 +24,7 @@ import java.util.Date;
 import udacity.hugo.myappportfolio.R;
 import udacity.hugo.myappportfolio.spotifystreamer.model.StreamTrack;
 import udacity.hugo.myappportfolio.spotifystreamer.nav.NavigationStreamerHelper;
+import udacity.hugo.myappportfolio.spotifystreamer.service.StreamerService;
 
 public class TrackPlayerActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -123,10 +124,14 @@ public class TrackPlayerActivity extends AppCompatActivity implements View.OnCli
         int i = v.getId();
         switch (i){
             case R.id.play_pause_track_btn:{
-                streamerService.setPosition(args.getInt("songPos"));
-                streamerService.setTrack(currentTrack);
-                streamerService.setTrackList(streamTracks);
-                streamerService.playSong();
+                if(!streamerService.isPlaying()){
+                    streamerService.setPosition(args.getInt("songPos"));
+                    streamerService.setTrack(currentTrack);
+                    streamerService.setTrackList(streamTracks);
+                    streamerService.playSong();
+                }else {
+                    streamerService.pauseMusic();
+                }
                 break;
             }
         }
