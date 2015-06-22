@@ -20,9 +20,11 @@ import kaaes.spotify.webapi.android.models.Tracks;
 import udacity.hugo.myappportfolio.PortfolioApplication;
 import udacity.hugo.myappportfolio.R;
 import udacity.hugo.myappportfolio.spotifystreamer.adapter.ArtistTrackAdapter;
+import udacity.hugo.myappportfolio.spotifystreamer.model.StreamTrack;
 import udacity.hugo.myappportfolio.spotifystreamer.nav.NavigationStreamerHelper;
 
-public class ArtistTracksActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
+public class ArtistTracksActivity extends AppCompatActivity
+        implements AdapterView.OnItemClickListener{
 
 
     private Bundle bundle;
@@ -39,6 +41,8 @@ public class ArtistTracksActivity extends AppCompatActivity implements AdapterVi
     static final String ARTWORK_URL_INFO = "trackArtworkUrl";
     static final String TRACK_PREVIEW_URL_INFO = "trackPreviewUrl";
     static final String TRACK_TOTAL_DURATION = "trackTotalDuration";
+
+    private ArrayList<StreamTrack> parcelableTrack = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +90,12 @@ public class ArtistTracksActivity extends AppCompatActivity implements AdapterVi
                     Tracks tracks = (Tracks) o;
                     tracksList = tracks.tracks;
                     trackAdapter.updateList(tracksList);
+                    for(int index = 0; index < tracks.tracks.size(); index++){
+                        StreamTrack streamTrack = new StreamTrack();
+                        streamTrack.setTrackName(tracks.tracks.get(index).name);
+                        streamTrack.setTrackPreviewUrl(tracks.tracks.get(index).preview_url);
+                        parcelableTrack.add(streamTrack);
+                    }
                 }
             }
         };
@@ -107,6 +117,8 @@ public class ArtistTracksActivity extends AppCompatActivity implements AdapterVi
         bundle.putString(TRACK_PREVIEW_URL_INFO, track.preview_url);
         bundle.putLong(TRACK_TOTAL_DURATION, track.duration_ms);
         bundle.putString(TRACK_NAME_INFO, track.name);
+        bundle.putParcelableArrayList("theTracks", parcelableTrack);
+        bundle.putInt("songPos", position);
 
         NavigationStreamerHelper.openTrackPlayerActivity(this, bundle);
     }
