@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import udacity.hugo.myappportfolio.spotifystreamer.ArtistTracksActivity;
+import udacity.hugo.myappportfolio.spotifystreamer.TrackPlayerActivity;
 
 /**
  * Created by hugo on 6/17/15.
@@ -11,10 +12,17 @@ import udacity.hugo.myappportfolio.spotifystreamer.ArtistTracksActivity;
 public class NavigationStreamerHelper {
 
     public static final String TRACKS_ACTIVITY_BUNDLE_EXTRAS = "tracks_extras";
+    public static final String TRACK_INFO_BUNDLE_EXTRAS = "track_info";
 
     public static void openArtistTracksActivity(AppCompatActivity appCompatActivity, Bundle bundle){
         Intent intent = new Intent(appCompatActivity, ArtistTracksActivity.class);
         intent.putExtra(TRACKS_ACTIVITY_BUNDLE_EXTRAS, bundle);
+        appCompatActivity.startActivity(intent);
+    }
+
+    public static void openTrackPlayerActivity(AppCompatActivity appCompatActivity, Bundle bundle){
+        Intent intent = new Intent(appCompatActivity, TrackPlayerActivity.class);
+        intent.putExtra(TRACK_INFO_BUNDLE_EXTRAS, bundle);
         appCompatActivity.startActivity(intent);
     }
 }

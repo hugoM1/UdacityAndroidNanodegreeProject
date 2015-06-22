@@ -39,29 +39,27 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         Button button = (Button) v;
         switch (v.getId()){
             case R.id.btn_spotify_streamer:{
-                showToast(String.valueOf(button.getText()));
+                startApp(String.valueOf(button.getText()));
             }break;
             case R.id.btn_scores_app:{
-                showToast(String.valueOf(button.getText()));
+                startApp(String.valueOf(button.getText()));
             }break;
             case R.id.btn_library_app:{
-                showToast(String.valueOf(button.getText()));
+                startApp(String.valueOf(button.getText()));
             }break;
             case R.id.btn_build_it_app:{
-                showToast(String.valueOf(button.getText()));
+                startApp(String.valueOf(button.getText()));
             }break;
             case R.id.btn_xyz_reader_app:{
-                showToast(String.valueOf(button.getText()));
+                startApp(String.valueOf(button.getText()));
             }break;
             case R.id.btn_capstone_app:{
-                showToast(String.valueOf(button.getText()));
+                startApp(String.valueOf(button.getText()));
             }break;
         }
     }
 
-    private void showToast(String msg){
-        String textToShow = String.format("This button will launch my %s", msg);
-        Toast.makeText(this, textToShow, Toast.LENGTH_SHORT).show();
+    private void startApp(String msg){
         NavigationHelper.openCurrentApp(this, msg);
     }
 

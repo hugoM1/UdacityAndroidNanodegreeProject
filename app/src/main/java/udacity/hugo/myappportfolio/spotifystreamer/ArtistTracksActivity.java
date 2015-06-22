@@ -6,12 +6,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+
 import kaaes.spotify.webapi.android.models.Track;
 import kaaes.spotify.webapi.android.models.Tracks;
 import udacity.hugo.myappportfolio.PortfolioApplication;
@@ -19,7 +22,7 @@ import udacity.hugo.myappportfolio.R;
 import udacity.hugo.myappportfolio.spotifystreamer.adapter.ArtistTrackAdapter;
 import udacity.hugo.myappportfolio.spotifystreamer.nav.NavigationStreamerHelper;
 
-public class ArtistTracksActivity extends AppCompatActivity {
+public class ArtistTracksActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
 
     private Bundle bundle;
@@ -30,14 +33,18 @@ public class ArtistTracksActivity extends AppCompatActivity {
     private ArtistTrackAdapter trackAdapter;
     private List<Track> tracksList = new ArrayList<>();
 
+    static final String ARTIST_NAME_INFO = "artistName";
+    static final String ALBUM_NAME_INFO = "albumName";
+    static final String TRACK_NAME_INFO = "trackName";
+    static final String ARTWORK_URL_INFO = "trackArtworkUrl";
+    static final String TRACK_PREVIEW_URL_INFO = "trackPreviewUrl";
+    static final String TRACK_TOTAL_DURATION = "trackTotalDuration";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artist_tracks);
 
-        tracksListView = (ListView) findViewById(R.id.list_view_top_tracks);
-        trackAdapter = new ArtistTrackAdapter(tracksList, this);
-        tracksListView.setAdapter(trackAdapter);
+        initView();
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -49,6 +56,13 @@ public class ArtistTracksActivity extends AppCompatActivity {
         }
 
         getTenTopTracksByArtist(bundle.getString(SpotifyStreamerActivity.ARTIST_ID_EXTRA));
+    }
+
+    private void initView() {
+        tracksListView = (ListView) findViewById(R.id.list_view_top_tracks);
+        tracksListView.setOnItemClickListener(this);
+        trackAdapter = new ArtistTrackAdapter(tracksList, this);
+        tracksListView.setAdapter(trackAdapter);
     }
 
     private void getTenTopTracksByArtist(final String artistId){
@@ -76,6 +90,25 @@ public class ArtistTracksActivity extends AppCompatActivity {
             }
         };
         asyncTask.execute();
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+       Track track = (Track) trackAdapter.getItem(position);
+
+        Bundle bundle = new Bundle();
+        if (track.artists.size() > 0) {
+            bundle.putString(ARTIST_NAME_INFO, track.artists.get(0).name);
+        }
+        bundle.putString(ALBUM_NAME_INFO, track.album.name);
+        if (track.album.images.size() > 0) {
+            bundle.putString(ARTWORK_URL_INFO, track.album.images.get(0).url);
+        }
+        bundle.putString(TRACK_PREVIEW_URL_INFO, track.preview_url);
+        bundle.putLong(TRACK_TOTAL_DURATION, track.duration_ms);
+        bundle.putString(TRACK_NAME_INFO, track.name);
+
+        NavigationStreamerHelper.openTrackPlayerActivity(this, bundle);
     }
 
     @Override
