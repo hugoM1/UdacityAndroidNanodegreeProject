@@ -11,12 +11,13 @@
         android:layout_height="@dimen/search_h_size"
         android:layout_margin="@dimen/search_margin"
         android:hint="@string/search_an_artist"
-        android:inputType="textPersonName"/>
+        android:inputType="textPersonName" />
 
     <ListView
         android:id="@+id/artist_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/search_margin" />
+        android:layout_margin="@dimen/search_margin"
+        android:listSelector="@drawable/listitem_selector"/>
 
 </LinearLayout>

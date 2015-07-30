@@ -7,8 +7,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-
-
         android:name=".PortfolioApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -38,7 +36,19 @@
             android:name=".spotifystreamer.TrackPlayerActivity"
             android:label="@string/title_activity_track_player" >
         </activity>
-        <service android:name=".spotifystreamer.service.StreamerService"/>
+
+        <service
+            android:name=".spotifystreamer.service.StreamerService"
+            android:enabled="true" />
+
+        <activity
+            android:name=".spotifystreamer.SpotifyStreamerMainActivity"
+            android:label="@string/title_activity_spotify_streamer" >
+        </activity>
+        <activity
+            android:name=".spotifystreamer.SpotifyTrackPlayerActivity"
+            android:label="@string/title_activity_spotify_track_player" >
+        </activity>
     </application>
 
 </manifest>

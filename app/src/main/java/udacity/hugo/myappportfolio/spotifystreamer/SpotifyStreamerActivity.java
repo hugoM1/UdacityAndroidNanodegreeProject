@@ -37,7 +37,7 @@ public class SpotifyStreamerActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_spotify_streamer);
+        setContentView(R.layout.spotify_streamer_layout);
 
         searchEditText = (EditText) findViewById(R.id.edit_text_search);
         artistList = (ListView) findViewById(R.id.artist_list_view);

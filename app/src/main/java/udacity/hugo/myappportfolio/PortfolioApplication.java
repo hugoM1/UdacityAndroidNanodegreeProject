@@ -18,21 +18,21 @@ public class PortfolioApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        sInstance  = this;
+        sInstance = this;
     }
 
-    public static synchronized PortfolioApplication getInstance(){
+    public static synchronized PortfolioApplication getInstance() {
         return sInstance;
     }
 
-    public SpotifyApi getSpotifyApi(){
-        if(spotifyApi == null){
+    public SpotifyApi getSpotifyApi() {
+        if (spotifyApi == null) {
             spotifyApi = new SpotifyApi();
         }
         return spotifyApi;
     }
 
-    public SpotifyService getSpotifyService(){
+    public SpotifyService getSpotifyService() {
         spotifyService = getSpotifyApi().getService();
 
         return spotifyService;

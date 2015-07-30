@@ -2,19 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/home_activity_background"
     android:orientation="vertical"
-    tools:context=".HomeActivity"
-    android:background="@color/home_activity_background">
+    tools:context=".HomeActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginBottom="25dp"
         android:layout_marginTop="@dimen/home_btn"
         android:text="@string/home_title_text"
         android:textColor="@color/home_title_color"
-        android:textSize="@dimen/home_title_size"
-        android:layout_marginBottom="25dp"/>
+        android:textSize="@dimen/home_title_size" />
 
     <Button
         android:id="@+id/btn_spotify_streamer"
@@ -54,7 +54,7 @@
         android:layout_marginTop="@dimen/home_btn"
         android:background="@color/home_btn_background"
         android:text="@string/build_it"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/btn_xyz_reader_app"

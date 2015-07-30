@@ -3,7 +3,7 @@ package udacity.hugo.myappportfolio.nav;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 
-import udacity.hugo.myappportfolio.spotifystreamer.SpotifyStreamerActivity;
+import udacity.hugo.myappportfolio.spotifystreamer.SpotifyStreamerMainActivity;
 
 /**
  * Created by hugo on 6/16/15.
@@ -15,7 +15,7 @@ public class NavigationHelper {
     public static void openCurrentApp(AppCompatActivity appCompatActivity, String appName){
         Intent intent;
         if(spotifyApp.equals(appName)){
-            intent = new Intent(appCompatActivity, SpotifyStreamerActivity.class);
+            intent = new Intent(appCompatActivity, SpotifyStreamerMainActivity.class);
             appCompatActivity.startActivity(intent);
         }
     }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_view_top_tracks"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/tracks_margin"
+    android:orientation="vertical"
+    tools:context="udacity.hugo.myappportfolio.spotifystreamer.ArtistTracksActivity">
+
+</ListView>
